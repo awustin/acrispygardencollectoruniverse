@@ -2,87 +2,125 @@
 <!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
 <!--[if IE 9]><html class="lt-ie10"> <![endif]-->
 <!--[if gt IE 9]><!--> <html> <!--<![endif]-->
-    <head>
-        {MobileAppHeaders}
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../styles/stylehead.css">
-        <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
-        {block:Description}
-        <meta name="description" content="{MetaDescription}">
-        {/block:Description}
+<head>
+    {MobileAppHeaders}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../styles/stylehead.css" media="screen">
+    <link rel="stylesheet" href="../styles/bootstrap-grid.css" media="screen">
+    <link rel="stylesheet" href="../styles/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../styles/bootstrap-reboot.css" media="screen">
+    <link rel="stylesheet" href="../styles/bootstrap-reboot.min.css" media="screen">
+    <title>{Title}</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}">
+    {/block:Description}
 
-        {block:Hidden}
-        <meta name="if:Sliding header" content="1">
-        <meta name="if:Show navigation" content="1">
-        <meta name="if:Endless scrolling" content="1">
-        <meta name="if:Syntax highlighting" content="0">
-        <meta name="select:Layout" content="regular" title="Regular">
-        <meta name="select:Layout" content="narrow" title="Minimal">
-        <meta name="select:Layout" content="wide" title="Wide">
-        <meta name="select:Layout" content="grid" title="Grid">
-        <meta name="if:Related Posts" content="1">
-        <meta name="text:Disqus shortname" content="">
-        <meta name="text:Google analytics ID" content="">
-        {/block:Hidden}
+    {block:Hidden}
+    <meta name="if:Sliding header" content="1">
+    <meta name="if:Show navigation" content="1">
+    <meta name="if:Endless scrolling" content="1">
+    <meta name="if:Syntax highlighting" content="0">
+    <meta name="select:Layout" content="regular" title="Regular">
+    <meta name="select:Layout" content="narrow" title="Minimal">
+    <meta name="select:Layout" content="wide" title="Wide">
+    <meta name="select:Layout" content="grid" title="Grid">
+    <meta name="if:Related Posts" content="1">
+    <meta name="text:Disqus shortname" content="">
+    <meta name="text:Google analytics ID" content="">
+    {/block:Hidden}
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="theme-color" content="#35465D">
-        <link rel="shortcut icon" href="{Favicon}">
-        <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
-        <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        <!--<link rel="stylesheet" href="https://static.tumblr.com/xu1kvii/TNpppppa3/main-min.css">
-        {block:IfSyntaxHighlighting}
-        <link rel="stylesheet" href="https://static.tumblr.com/ehm1tdz/2VWnye81h/tumblr-highlightjs.css">-->
-        {/block:IfSyntaxHighlighting}
-        {PostTypographyStyles}
-     
-    </head>
-    <body data-urlencoded-name="{URLEncodedName}" 
-        class="{select:Layout}{block:IndexPage} 
-            index-page{/block:IndexPage}{block:PermalinkPage} 
-            permalink{/block:PermalinkPage}{block:LikesPage} 
-            likes-page{/block:LikesPage}{block:FollowingPage} 
-            following-page{/block:FollowingPage}{block:SearchPage} 
-            search-page{block:NoSearchResults} 
-            no-results{/block:NoSearchResults}{block:NoLikes} 
-            no-likes{/block:NoLikes}{block:NoPosts} 
-            no-posts{/block:NoPosts}{block:NoFollowing} 
-            no-following{/block:NoFollowing}{/block:SearchPage}{block:HideHeaderImage} 
-            no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} 
-            contain-header-image{/block:NoStretchHeaderImage}{block:IfRelatedPosts} 
-            display-related-posts{/block:IfRelatedPosts}{block:ShowAdsOnThisPage} 
-            show-ads{/block:ShowAdsOnThisPage}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#35465D">
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    
+    <!--<link rel="stylesheet" href="https://static.tumblr.com/xu1kvii/TNpppppa3/main-min.css">
+    {block:IfSyntaxHighlighting}
+    <link rel="stylesheet" href="https://static.tumblr.com/ehm1tdz/2VWnye81h/tumblr-highlightjs.css">-->
+    {/block:IfSyntaxHighlighting}
+    {PostTypographyStyles}
+    
+</head>
+<body data-urlencoded-name="{URLEncodedName}" 
+    class="index-page grid permalink likes-page following-page search-page no-results no-likes no-posts
+        no-following no-header-image contain-header-image display-related-posts">
 
-            <section id="page">
-                <div class="header-wrapper avatar-style-square">
+    <section id="page">
+        <!--    ***********************    -->
+        <!--    ******** HEADER *******    -->
+        <!--    ***********************    -->
+        <div class="header-wrapper avatar-style-square">
+            <header id="header" class="top-blog-header">
+                <!-- {block:ShowHeaderImage} -->
+                <div class="header-image-wrapper">
+                    <a href="/" class="header-image contain" data-bg-image="{HeaderImage}.png">
+                        <!-- {block:NoStretchHeaderImage}-->
+                        <img src="../images/{HeaderImage}.png" alt="HeaderImage">
+                        <!-- {/block:NoStretchHeaderImage}-->
+                    </a>
+                    <div class="loader-bg"></div>
+                </div>
+                <!-- {/block:ShowHeaderImage}-->
+                
+                <div class="blog-title-wrapper content">
+                    <figure class="avatar-wrapper animate">
+                            <img src="/images/2.png" alt="" class="user-avatar">
+                    </figure>
 
-                <header id="header" class="top-blog-header">
-                    <!-- {block:ShowHeaderImage} -->
-                    <div class="header-image-wrapper contain">
-                        <a href="/" class="header-image cover" data-bg-image="{HeaderImage}.png">
-                            <!-- {block:NoStretchHeaderImage}-->
-                            <img src="../images/{HeaderImage}.png" alt="HeaderImage">
-                            <!-- {/block:NoStretchHeaderImage}-->
-                        </a>
-                        <div class="loader-bg"></div>
+                    <div class="title-group animate">
+                        
+                        <h1 class="blog-title">
+                            <a href="/">A Crispy Garden Collector</a>
+                        </h1>
+                        <span class="description">
+                            Description of my blog. This is a test.
+                        </span>
+                        
                     </div>
-                    <!-- {/block:ShowHeaderImage}-->
-
-                    <div class="blog-title-wrapper content">
-                        <div class="title-group animate">
-                            
-                            <h1 class="blog-title">
-                                <a href="/">A Crispy Garden Collector</a>
-                            </h1>
-                            
-                            
-                            <span class="description">
-                                Description of my blog. This is a test.
-                            </span>
-                            
-                        </div>
-                    </div>
-                </header>
-            </div>
-            </section>
-    </body>
+                </div>
+            </header>
+        </div>
+        
+        <!--    ***********************    -->
+        <!--    ******** NAV    *******    -->
+        <!--    ***********************    -->
+    <!--{block:IfShowNavigation}-->
+        <div class="nav-wrapper nav-responsive">
+            <nav class="nav-menu">
+                <ul class="inline-nav">
+                    <li class="nav-item nav-item">
+                        <a href="/" class="label current-page">Posts</a>
+                    </li>
+                    <li class="nav-item nav-item">
+                        <a href="/" class="label current-page">Likes</a>
+                    </li>
+                    <li class="nav-item nav-item">
+                        <a href="/" class="label current-page">Following</a>
+                    </li>
+                    <li class="nav-item nav-item">
+                        <a href="/" class="label current-page">AskLAbel</a>
+                    </li>
+                    <li class="nav-item nav-item">
+                        <a href="/" class="label current-page">SubmitLabel</a>
+                    </li>
+                    <li class="nav-item nav-item">
+                        <a href="" class="label">Label</a>
+                    </li>
+                    <li class="nav-item nav-item">
+                        <a href="/" class="label external-page">Archive</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    <!--{/block:IfShowNavigation}-->
+    
+        <!--    ***********************    -->
+        <!--    ******** HEADER *******    -->
+        <!--    ***********************    -->
+    </section>
+    
+    <script src="../scripts/bootstrap.bundle.js"></script>
+    <script src="../scripts/bootstrap.bundle.min.js"></script>
+</body>
