@@ -375,9 +375,9 @@
                                                     </div>
                                                 </div>
                                                 {block:NotReblog}
-                                                    <figcaption class="caption">
-                                                        {Caption}
-                                                    </figcaption>
+                                                <figcaption class="caption">
+                                                    {Caption}
+                                                </figcaption>
                                                 {/block:NotReblog}
                                                 {block:RebloggedFrom}
                                                 <div class="reblog-list">
@@ -848,6 +848,7 @@
                                     </div>
                                 </article>
                         {/block:Posts}
+
                         {block:FollowingPage}
                             {block:Blogs}
                                 <div class="blog-card" style="background-color: {BackgroundColor};">
@@ -2121,5 +2122,6 @@
             })(window.jQuery);
         </script>
         {/block:IfSyntaxHighlighting}
+    
     </body>
 </html>

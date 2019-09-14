@@ -57,7 +57,7 @@
                 <div class="header-image-wrapper">
                     <a href="/" class="header-image contain" data-bg-image="{HeaderImage}.png">
                         <!-- {block:NoStretchHeaderImage}-->
-                        <img src="../images/{HeaderImage}.png" alt="HeaderImage">
+                        <img id="HeaderImage" src="../images/{HeaderImage}.png" alt="HeaderImage">
                         <!-- {/block:NoStretchHeaderImage}-->
                     </a>
                     <div class="loader-bg"></div>
@@ -115,8 +115,159 @@
             </nav>
         </div>
     <!--{/block:IfShowNavigation}-->
-    </section>
+
+        <section id="posts" class="content clearfix {block:HideTitle}
+        {block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}
+        {block:HideHeaderImage}no-image {/block:HideHeaderImage} 
+        {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar} 
+        {block:HideAvatar}avatar-hidden{/block:HideAvatar} 
+        {block:IfShowNavigation}show-nav{/block:IfShowNavigation}">
+            <div class="container">
+                <div class="main">
+                    <!-- ########## Imagen ########## -->
+                    <!-- ############################ -->
+                    <!--{block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}-->
+                    <article class="photo" data-post-id="2" data-supply-logging='{positions}'>
+                        <div class="post-wrapper clearfix">
+
+                            <!--    ****************************    -->
+                            <!--    ******** POST HEADER *******    -->
+                            <!--    ****************************    -->
+                            <header class="post-header">
+                                <!--{block:LikesPage}-->
+                                    <a class="post-blog" href="{Permalink}">
+                                        <img class="blog-avatar" src="../images/2.png" data-blog-card-username="{PostBlogName}" width="30" height="30">{PostBlogName}
+                                    </a>
+                                <!--{/block:LikesPage}-->
+                                <!--{block:RebloggedFrom}-->
+                                    <!--<a class="reblog-link" href="{ReblogParentURL}" data-blog-card-username="{ReblogParentName}"><i class="reblog_sm"></i>{ReblogParentName}</a>-->
+                                <!--{/block:RebloggedFrom}-->
+                            </header>
+
+                            <!--    ****************************    -->
+                            <!--    ******** POST BODY *********    -->
+                            <!--    ****************************    -->
+                            <section class="post">
+                                    <!--{block:Photo}-->
+                                    <figure class="post-content high-res with-caption" data-photo-width="{PhotoWidth-HighRes}">
+                                        <div class="photo-wrapper">
+                                            <div class="photo-wrapper-inner">
+                                                <a href=""> <!--"{LinkOpenTag}"-->
+                                                    <img src="../images/{photo}.png" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}" data-live-photo="{LivePhotoURL}" data-live-photo-still-image-time="{LivePhotoStillImageTime}">
+                                                </a> <!--"{LinkCloseTag}"-->
+                                            </div>
+                                        </div>
+                                        <!--{block:NotReblog}-->
+                                        <figcaption class="caption">
+                                            {Caption}
+                                        </figcaption>
+                                        <!--{/block:NotReblog}-->
+                                    </figure>
+                                    <!--{/block:Photo}-->
+                            </section>
+
+                        </div>
+                    </article>
+                    <!--{/block:Posts}-->                    
+                    <!-- ############################ -->
+
+                    
+                    <!-- ########## Imagen ########## -->
+                    <!-- ############################ -->
+                    <!--{block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}-->
+                    <article class="photo" data-post-id="3" data-supply-logging='{positions}'>
+                            <div class="post-wrapper clearfix">
     
-    <script src="../scripts/bootstrap.bundle.js"></script>
-    <script src="../scripts/bootstrap.bundle.min.js"></script>
+                                <!--    ****************************    -->
+                                <!--    ******** POST HEADER *******    -->
+                                <!--    ****************************    -->
+                                <header class="post-header">
+                                    <!--{block:LikesPage}-->
+                                        <a class="post-blog" href="{Permalink}">
+                                            <img class="blog-avatar" src="../images/2.png" data-blog-card-username="{PostBlogName}" width="30" height="30">{PostBlogName}
+                                        </a>
+                                    <!--{/block:LikesPage}-->
+                                    <!--{block:RebloggedFrom}-->
+                                        <!--<a class="reblog-link" href="{ReblogParentURL}" data-blog-card-username="{ReblogParentName}"><i class="reblog_sm"></i>{ReblogParentName}</a>-->
+                                    <!--{/block:RebloggedFrom}-->
+                                </header>
+    
+                                <!--    ****************************    -->
+                                <!--    ******** POST BODY *********    -->
+                                <!--    ****************************    -->
+                                <section class="post">
+                                        <!--{block:Photo}-->
+                                        <figure class="post-content high-res with-caption" data-photo-width="{PhotoWidth-HighRes}">
+                                            <div class="photo-wrapper">
+                                                <div class="photo-wrapper-inner">
+                                                    <a href=""> <!--"{LinkOpenTag}"-->
+                                                        <img src="../images/{photo2}.png" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}" data-live-photo="{LivePhotoURL}" data-live-photo-still-image-time="{LivePhotoStillImageTime}">
+                                                    </a> <!--"{LinkCloseTag}"-->
+                                                </div>
+                                            </div>
+                                            <!--{block:NotReblog}-->
+                                            <figcaption class="caption">
+                                                {Caption}
+                                            </figcaption>
+                                            <!--{/block:NotReblog}-->
+                                        </figure>
+                                        <!--{/block:Photo}-->
+                                </section>
+    
+                            </div>
+                    </article>
+                    <!--{/block:Posts}-->                    
+                    <!-- ############################ -->
+
+
+                    <!-- ########## Imagen ########## -->
+                    <!-- ############################ -->
+                    <!--{block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}-->
+                    <article class="photo" data-post-id="4" data-supply-logging='{positions}'>
+                            <div class="post-wrapper clearfix">
+    
+                                <!--    ****************************    -->
+                                <!--    ******** POST HEADER *******    -->
+                                <!--    ****************************    -->
+                                <header class="post-header">
+                                    <!--{block:LikesPage}-->
+                                        <a class="post-blog" href="{Permalink}">
+                                            <img class="blog-avatar" src="../images/2.png" data-blog-card-username="{PostBlogName}" width="30" height="30">{PostBlogName}
+                                        </a>
+                                    <!--{/block:LikesPage}-->
+                                    <!--{block:RebloggedFrom}-->
+                                        <!--<a class="reblog-link" href="{ReblogParentURL}" data-blog-card-username="{ReblogParentName}"><i class="reblog_sm"></i>{ReblogParentName}</a>-->
+                                    <!--{/block:RebloggedFrom}-->
+                                </header>
+    
+                                <!--    ****************************    -->
+                                <!--    ******** POST BODY *********    -->
+                                <!--    ****************************    -->
+                                <section class="post">
+                                        <!--{block:Photo}-->
+                                        <figure class="post-content high-res with-caption" data-photo-width="{PhotoWidth-HighRes}">
+                                            <div class="photo-wrapper">
+                                                <div class="photo-wrapper-inner">
+                                                    <a href=""> <!--"{LinkOpenTag}"-->
+                                                        <img src="../images/{photo4}.png" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}" data-live-photo="{LivePhotoURL}" data-live-photo-still-image-time="{LivePhotoStillImageTime}">
+                                                    </a> <!--"{LinkCloseTag}"-->
+                                                </div>
+                                            </div>
+                                            <!--{block:NotReblog}-->
+                                            <figcaption class="caption">
+                                                {Caption}
+                                            </figcaption>
+                                            <!--{/block:NotReblog}-->
+                                        </figure>
+                                        <!--{/block:Photo}-->
+                                </section>
+    
+                            </div>
+                    </article>
+                    <!--{/block:Posts}-->                    
+                    <!-- ############################ -->
+                </div>
+            </div>  
+        </section>
+    </section>
 </body>

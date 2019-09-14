@@ -1,11 +1,12 @@
 /* Colors */
 :root{
-    --title-color: #444;
-    --title-hover: purple; /*tiene que ser color de la imagen del header*/
+    --title-color: #444;    
+    --title-hover: #444466;/*tiene que ser color de la imagen del header*/
     --description-color:#666;
     --accent-color: #725D6E; 
     --body-text-color: #444;
-    --background-color: #ebebeb;
+    --background-color: #ebebeb; 
+    --post-background-color: #d0d0d0;
     --body-font-family: "Segoe UI",sans-serif;
     --rgb-background-color: purple;
     --title-font: "Verdana";
@@ -62,11 +63,11 @@ button,html,select{
 
 
 body {
-    background: var(--background-color);
+    background: var(--background-color)!important;
     margin:0 auto;
     line-height:1.4;
-    color:var(--body-text-color);
-    font-family:var(--body-font-family);
+    color:var(--body-text-color)!important;
+    font-family:var(--body-font-family)!important;
 }
 
 a {
@@ -453,4 +454,80 @@ h1{
 .nav-wrapper .nav-item{
     display:inline-block;
     margin:5px 10px
+}
+
+#posts{
+    border: 1px dashed black;
+    margin-top:3%;
+    z-index:10
+}
+
+#posts article{
+    position:relative
+}
+
+.index-page.grid #posts,.index-page.grid.no-results #posts.masonry{
+    max-width:100%;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:50px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+
+.index-page.grid #posts article{
+    float:left;
+    margin:0 0px 0;
+    max-width:300px;
+    width:300px;
+}
+
+
+.main{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -webkit-flex-direction:inherit;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    -webkit-box-flex:1;
+    -webkit-flex:auto;
+    -moz-box-flex:1;
+    -ms-flex:auto;
+    flex:auto;
+    max-width:502px
+}*/
+
+.photo{
+    border: 1px dashed black
+}
+
+.post-wrapper{
+    background: var(--post-background-color);
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+    overflow:hidden;
+    padding:0;
+    position:relative;
+    -webkit-background-clip:padding-box;
+    -moz-background-clip:padding-box;
+    background-clip:padding-box;
+    border:1px solid #eee;
+    border:1px solid rgba(0,0,0,.08)
+}
+.post-wrapper a{
+    color:inherit;
+    text-decoration:underline
+}
+.index-page.grid .post-wrapper{
+    overflow:hidden
 }
