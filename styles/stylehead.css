@@ -456,10 +456,11 @@ h1{
     margin:5px 10px
 }
 
+/* *********POSTS***************** */
 #posts{
     border: 1px dashed black;
     margin-top:3%;
-    z-index:10
+    z-index:10;
 }
 
 #posts article{
@@ -477,14 +478,6 @@ h1{
     box-sizing:border-box
 }
 
-.index-page.grid #posts article{
-    float:left;
-    margin:0 0px 0;
-    max-width:300px;
-    width:300px;
-}
-
-
 .main{
     display:-webkit-box;
     display:-webkit-flex;
@@ -493,21 +486,44 @@ h1{
     display:flex;
     -webkit-box-orient:vertical;
     -webkit-box-direction:normal;
-    -webkit-flex-direction:inherit;
+    -webkit-flex-direction:row;
     -moz-box-orient:vertical;
     -moz-box-direction:normal;
     -ms-flex-direction:column;
-    flex-direction:column;
+    flex-direction:row;
     -webkit-box-flex:1;
     -webkit-flex:auto;
     -moz-box-flex:1;
     -ms-flex:auto;
     flex:auto;
-    max-width:502px
-}*/
+    max-width:100%; /* 502px antes*/
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content:stretch;
+    border: 1px dashed black
+}
+
+.index-page.grid #posts article{
+    float:left;
+    margin:0 0px 0;
+    max-width:300px;
+    width:300px;
+    border: 1px dashed black
+}
 
 .photo{
     border: 1px dashed black
+}
+
+.android .pop-menu ul li.open-in-app,.ios .pop-menu ul li.open-in-app,.likes-page .post-header,.likes-widget .post-header,.photo-wrapper-inner a,.reblogged .post-header{
+    display:block
+}
+
+.post{
+    padding:0;
+    position:relative;
+    word-wrap:break-word;
+    overflow:hidden
 }
 
 .post-wrapper{
@@ -524,10 +540,180 @@ h1{
     border:1px solid #eee;
     border:1px solid rgba(0,0,0,.08)
 }
+
 .post-wrapper a{
     color:inherit;
     text-decoration:underline
 }
+
 .index-page.grid .post-wrapper{
     overflow:hidden
+}
+
+.post-header{
+    display:auto;
+    font-size:14px;
+    font-weight:200;
+    padding:11px 15px;
+    border-bottom:1px solid #e7e7e7;
+    -o-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden
+}
+
+.post-header .blog-avatar{
+    width:30px;
+    height:30px;
+    margin-right:11px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px
+}
+.post-header a{
+    color:inherit;
+    text-decoration:none
+}
+
+.post-content h1 a,.post-content h2 a,.post-content h3 a,.post-content h4 a,.post-content h5 a,.post-content h6 a,.post-header .post-blog{
+    color:inherit
+}
+
+.description iframe,.description img,.description object,.post img{
+    max-width:100%;
+    height: auto
+}
+
+.index-page.grid .photo-wrapper-inner{
+    padding:0
+}
+
+.index-page.grid .photo-wrapper-inner img{
+    margin:0!important;
+    width:100%
+}
+
+.photo .photo-wrapper{
+    display:table;
+    text-align:center;
+    width:100%;
+    -webkit-border-radius:3px 3px 0 0;
+    -moz-border-radius:3px 3px 0 0;
+    border-radius:3px 3px 3px 3px;
+    overflow:hidden
+}
+
+.photo .photo-wrapper-inner{
+    display:table-cell;
+    padding:40px 0;
+    vertical-align:middle;
+}
+
+.photo-wrapper:not(.high-res)+.caption{
+    margin:0;
+    padding:20px
+}
+
+.photo .high-res img{
+    width:100%
+}
+.post-content .caption{
+    margin:20px
+}
+
+.panel{
+    position:relative;
+    height:auto;
+    width:100%;
+    z-index:1;
+    border: 1px dashed red
+}
+
+.clearfix{
+    zoom:1
+}
+
+.clearfix:after,.clearfix:before{
+    display:table;content:""
+}
+
+.clearfix:after{
+    clear:both
+}
+
+#pagination .bg,#pagination a,.loader .loader-bar{
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px
+}
+
+#pagination a{
+    color:#858585;
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:50px;
+    text-align:center;
+    text-decoration:none;
+    padding:10px 28px 10px 18px;
+    position:relative;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    float:left;
+    display:block;
+    opacity:.7
+}
+
+#pagination a:after{
+    content:'';
+    border:6px solid transparent;
+    width:0;
+    height:0;
+    position:absolute;
+    top:15px
+}
+
+#pagination a.next{float:right}
+#pagination a.next:after{border-left:7px solid #858585;right:10px}
+#pagination a.previous{padding:10px 18px 10px 28px}
+#pagination a.previous:after{border-right:7px solid #858585;left:10px}
+#pagination a:active{-webkit-transform:translateY(1px);-moz-transform:translateY(1px);-ms-transform:translateY(1px);-o-transform:translateY(1px);transform:translateY(1px)}
+#pagination .bg{border:1px solid;display:block;position:absolute;width:100%;height:100%;top:0;left:0;opacity:.15}
+#pagination.invisible{pointer-events:none}
+#pagination.invisible .bg{display:none}
+
+
+.loader{
+    position:absolute;
+    line-height:0;
+    top:10px;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%)
+}
+
+.loader .loader-bar{
+    display:flex;
+    height:16px;
+    width:16px;
+    margin:0 3px;
+    opacity:.1;
+    background-color:#d9d9d9;
+    border: 1px dashed black
+}
+
+.loader-bar:nth-child(1){
+    -webkit-animation-delay:-200ms;
+    -moz-animation-delay:-200ms;
+    -o-animation-delay:-200ms;
+    animation-delay:-200ms
+}
+.loader-bar:nth-child(2){
+    -webkit-animation-delay:-100ms;
+    -moz-animation-delay:-100ms;
+    -o-animation-delay:-100ms;
+    animation-delay:-100ms
 }

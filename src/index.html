@@ -116,18 +116,13 @@
         </div>
     <!--{/block:IfShowNavigation}-->
 
-        <section id="posts" class="content clearfix {block:HideTitle}
-        {block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}
-        {block:HideHeaderImage}no-image {/block:HideHeaderImage} 
-        {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar} 
-        {block:HideAvatar}avatar-hidden{/block:HideAvatar} 
-        {block:IfShowNavigation}show-nav{/block:IfShowNavigation}">
+        <section id="posts" class="content clearfix">
             <div class="container">
                 <div class="main">
                     <!-- ########## Imagen ########## -->
                     <!-- ############################ -->
                     <!--{block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}-->
-                    <article class="photo" data-post-id="2" data-supply-logging='{positions}'>
+                    <article id="2" class="photo" data-post-id="2" data-supply-logging='{positions}'>
                         <div class="post-wrapper clearfix">
 
                             <!--    ****************************    -->
@@ -149,7 +144,7 @@
                             <!--    ****************************    -->
                             <section class="post">
                                     <!--{block:Photo}-->
-                                    <figure class="post-content high-res with-caption" data-photo-width="{PhotoWidth-HighRes}">
+                                    <figure class="post-content high-res with-caption" data-photo-width="500">
                                         <div class="photo-wrapper">
                                             <div class="photo-wrapper-inner">
                                                 <a href=""> <!--"{LinkOpenTag}"-->
@@ -159,7 +154,7 @@
                                         </div>
                                         <!--{block:NotReblog}-->
                                         <figcaption class="caption">
-                                            {Caption}
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                         </figcaption>
                                         <!--{/block:NotReblog}-->
                                     </figure>
@@ -269,5 +264,33 @@
                 </div>
             </div>  
         </section>
+
+        <!--    ***********************    -->
+        <!--    ******** FOOTER *******    -->
+        <!--    ***********************    -->
+        <footer id="footer" class="content clearfix">
+            <!--{block:IndexPage}-->
+                <!--{block:Pagination}-->
+                <div id="pagination">
+                    <!--{block:PreviousPage}-->
+                    <a href="{PreviousPage}" class="previous" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}">{lang:Previous}
+                        <span class="bg"></span></a>
+                    <!--{/block:PreviousPage}-->
+
+                    <!--{block:NextPage}-->
+                    <a href="{NextPage}" class="next" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}">{lang:Next}
+                        <span class="bg"></span></a>
+                    <!--{/block:NextPage}-->
+
+                    <div class="loader">
+                        <div class="loader-bar">a</div>
+                        <div class="loader-bar">b</div>
+                        <div class="loader-bar">c</div>
+                    </div>
+                </div>
+                <!--{/block:Pagination}-->
+            <!--{/block:IndexPage}-->
+        </footer>     
+
     </section>
 </body>
